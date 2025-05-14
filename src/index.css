@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+@theme {
+  --font-lato: "Lato", sans-serif;
+  --font-quicksand: "Quicksand", sans-serif;
+  --color-greeny: #3bb77e;
+  --shadow-3xl: 5px 5px 15px 0 rgba(0, 0, 0, 0.25);
+
+  --breakpoint-xs: 23rem;    /* 368px */
+  --breakpoint-sm: 30rem;    /* 480px */
+  --breakpoint-md: 48rem;    /* 768px */
+  --breakpoint-lg: 64rem;    /* 1024px */
+  --breakpoint-xl: 75rem;    /* 1200px */
+  --breakpoint-2xl: 96rem;   /* 1536px */
+  --breakpoint-3xl: 101rem;  /* 1610px */
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  color: #253d4e;
+}
+
+.container {
+  @apply max-w-[1610px] mx-auto px-4 sm:px-6 md:px-8;
+}
+.container2 {
+  @apply max-w-[1341px] mx-auto px-4 sm:px-6 md:px-8;
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+  }
+}
+
+/* slick-slider dots customization  */
+.slick-dots {
+  bottom: 50px !important;
+  z-index: 10;
+}
+.slick-dots li {
+  border: 1px solid #253d4e;
+  height: 15px !important;
+  width: 15px !important;
+  border-radius: 50%;
+}
+.slick-dots li:hover {
+  background-color: rgba(59, 183, 125, 0.45);
+}
+.slick-dots li.slick-active {
+  background-color: #3bb77e;
+  border: 3px solid #3bb77e;
+}
+.cat-slide .slick-slide {
+  padding-right: 24px;
+}
+#dealsOfTheDay .deals-slide .slick-slide {
+  padding-right: 24px !important;
+}
+.product-slide .slick-slide {
+  padding-right: 8px;
+  overflow: hidden !important;
+  border-radius: 17px !important;
+}
+/* .product-slide .slick-current .item {
+  border: 4px solid #a2d2c9;
+} */
+/* product tooltip css */
+.wrapper {
+  font-family: "Lato";
+  font-size: 12px;
+  position: relative;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper .tooltip {
+  background: #3bb77e;
+  bottom: 100%;
+  color: #fff;
+  display: block;
+  left: -20px;
+  margin-bottom: 12px;
+  opacity: 0;
+  padding: 6px 8px;
+  border-radius: 6px;
+  pointer-events: none;
+  position: absolute;
+  width: max-content;
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+  transform: translateY(10px);
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.wrapper .tooltip:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+/* CSS Triangles - see Trevor's post */
+.wrapper .tooltip:after {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid #3bb77e 10px;
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 50%;
+  margin-left: -8px;
+  position: absolute;
+  width: 0;
+}
+
+.wrapper:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+/* Hide input number arrows  */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Truncating product title in the cardModal */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px; /* Adjust as needed */
+  display: block;
+}
+
+/* Contact map z-index issue with header */
+.leaflet-container {
+  z-index: 1 !important; /* Lower than your fixed header */
+}
+
+/* Cart Page Table */
+@media (max-width: 640px) {
+  table {
+    font-size: 14px;
+  }
+  th,
+  td {
+    padding: 10px;
+  }
+}
