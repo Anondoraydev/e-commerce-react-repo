@@ -13,6 +13,7 @@ import Cart from "./pages/Cart";
 function App() {
   return (
     <>
+      
       <Routes>
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />

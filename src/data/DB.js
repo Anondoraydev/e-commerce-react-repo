@@ -37,6 +37,7 @@ import Category2 from "/category-3.svg.svg";
 import Category4 from "/category-4.svg.svg";
 import Category5 from "/category-5.svg.svg";
 
+
  export const productsData = [
   {
     id: 1,
